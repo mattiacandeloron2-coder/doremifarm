@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "jpeg-js": "^0.4.4"
+  }
+}
