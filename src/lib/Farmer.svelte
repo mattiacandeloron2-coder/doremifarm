@@ -1,16 +1,17 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import { FARMER_GO, type FarmerPose } from '$lib/farm.svelte';
 
 	let { pose, facing }: { pose: FarmerPose; facing: number } = $props();
 
 	const src = $derived(
 		pose === 'yell'
-			? '/farmer-yell.png?v=15'
+			? asset('/farmer-yell.png')
 			: pose === 'run'
-				? '/farmer-run.png?v=15'
+				? asset('/farmer-run.png')
 				: pose === 'point'
-					? '/farmer-point.png?v=15'
-					: '/farmer-idle.png?v=15'
+					? asset('/farmer-point.png')
+					: asset('/farmer-idle.png')
 	);
 </script>
 

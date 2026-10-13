@@ -1,3 +1,4 @@
+import { asset } from '$app/paths';
 import type { AnimalId } from './catalog';
 import { pianoFreq } from './piano';
 
@@ -409,7 +410,7 @@ export async function ensureYell() {
 	if (!yellLoading) {
 		yellLoading = (async () => {
 			const audio = getContext();
-			const res = await fetch('/vai-comba.wav?v=3');
+			const res = await fetch(asset('/vai-comba.wav'));
 			const data = await res.arrayBuffer();
 			yellBuffer = await audio.decodeAudioData(data.slice(0));
 		})().catch(() => {

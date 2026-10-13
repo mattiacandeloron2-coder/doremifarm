@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import Farmer from '$lib/Farmer.svelte';
@@ -114,7 +115,7 @@
 	<div class="stage">
 		<div class="yard">
 			<button type="button" class="ground" aria-label="Chiudi il menu" onclick={clearMenu}></button>
-			<img class="farm-art" src="/farm-stage.png?v=11" alt="" />
+			<img class="farm-art" src={asset('/farm-stage.png')} alt="" />
 
 			{#each game.meteors as m (m.id)}
 				<div class="meteor" style:left="{m.x}%" style:top="{m.y}%"></div>

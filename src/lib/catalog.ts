@@ -1,3 +1,5 @@
+import { asset } from '$app/paths';
+
 export const KEYS = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'] as const;
 
 export type AnimalId =
@@ -25,9 +27,9 @@ export type AnimalKind = {
 export type AnimalPose = 'idle' | 'run' | 'fall';
 
 export function animalSprite(id: AnimalId, pose: AnimalPose = 'idle') {
-	if (id === 'kicko' && pose === 'fall') return '/animal-kicko-fall.png?v=15';
-	if (id === 'kicko' && pose === 'run') return '/animal-kicko-run.png?v=15';
-	return `/animal-${id}.png?v=15`;
+	if (id === 'kicko' && pose === 'fall') return asset('/animal-kicko-fall.png');
+	if (id === 'kicko' && pose === 'run') return asset('/animal-kicko-run.png');
+	return asset(`/animal-${id}.png`);
 }
 
 export const KINDS: AnimalKind[] = [
